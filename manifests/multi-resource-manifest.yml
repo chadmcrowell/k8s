@@ -1,0 +1,30 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: myapp
+
+---
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: webserver
+  namespace: myapp
+spec:
+  containers:
+    - image: httpd
+      name: httpserver
+
+---
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: pod-b
+  namespace: myapp
+spec:
+  containers:
+    - image: nginx
+      name: nginxserver
+    - image: nicolaka/netshoot
+      name: netshoot
