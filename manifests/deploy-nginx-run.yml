@@ -44,6 +44,7 @@ spec:
   - protocol: TCP
     targetPort: 80
     port: 8080
+    nodePort: 31020
   type: NodePort
 ---
 apiVersion: v1
@@ -57,4 +58,5 @@ spec:
   - protocol: TCP
     targetPort: 80
     port: 8080
+    nodePort: 31020
   type: LoadBalancer
