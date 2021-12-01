@@ -3,6 +3,15 @@
 - [source](https://kubernetes.io/docs/tutorials/stateless-application/guestbook/)
 
 ---
+## Create new namespace and switch context
+Create a new namespace to create resources in:
+```
+kubectl create ns guestbook
+```
+Change context to the current namespace, but to the new namespace:
+```bash
+kubectl config set-context --current --namespace guestbook
+```
 
 ## Create the Redis Leader Deployment
 Create a deployment in Kubernetes with the following command:
