@@ -1,4 +1,4 @@
-cat <<EOF | kubectl apply -f -
+---
 apiVersion: certificates.k8s.io/v1
 kind: CertificateSigningRequest
 metadata:
@@ -9,5 +9,4 @@ spec:
   request: $REQUEST
   signerName: kubernetes.io/kube-apiserver-client
   usages:
-  - client auth
-EOF 
+  - client auth 
