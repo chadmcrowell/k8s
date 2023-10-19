@@ -6,7 +6,7 @@ spec:
   containers:
   - image: busybox
     name: main
-    args: [ 'sh', '-c', while true; do echo "$(date)\n" >> /var/log/main-container.log; sleep 5; done' ]
+    args: [ 'sh', '-c', 'while true; do echo "$(date)\n" >> /var/log/main-container.log; sleep 5; done' ]
     volumeMounts:
       - name: varlog
         mountPath: /var/log
