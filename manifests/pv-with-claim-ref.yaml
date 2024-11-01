@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-volume
+spec:
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: "local-path"
+  claimRef:
+    name: pv-claim
+    namespace: default
+  hostPath:
+    path: "/mnt/data"
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
