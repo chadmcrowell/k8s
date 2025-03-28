@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: overloaded
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: overloaded
+  template:
+    metadata:
+      labels:
+        app: overloaded
+    spec:
+      initContainers:
+        - name: wait
+          image: busybox
+          command: ["sh", "-c", "sleep 5"]
+          resources:
+            requests:
+              cpu: "250m"
+              memory: "600Mi"
+      containers:
+        - name: main
+          image: nginx
+          resources:
+            requests:
+              cpu: "250m"
+              memory: "600Mi"
