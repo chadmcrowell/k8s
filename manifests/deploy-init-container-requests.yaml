@@ -1,3 +1,4 @@
+# deploy this on a single cluster 4GB node (https://killercoda.com/playgrounds/course/kubernetes-playgrounds/one-node-4GB)
 apiVersion: apps/v1
 kind: Deployment
 metadata:
